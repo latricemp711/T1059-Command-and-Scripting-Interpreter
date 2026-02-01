@@ -47,10 +47,6 @@ Step 4 - Containment and Eradication, Recovery -
 
 The containment strategey we are using is isolating the machine using Microsoft defender.  I gather all IP addresses, PCAP files, logs, hash values of suspected files (calc.au3.exe, etc.) and any indicators of compromise that will help build a legal case if needed.
 
-## Summary
-Here’s a clean, professional, and cohesive summary of your report—structured so it reads like a polished incident‑response executive summary:
-
----
 
 ## **Summary Report: T1059 – Command and Scripting Interpreter Incident**
 
