@@ -39,13 +39,15 @@ This is clearly the script downloading and installing the required AutoIt.exe pr
 
 We also check stats of malicious activities in DeepblueCLI by running the following scripts as we can see we have thousands of brute force attacks starting from Nov 15th, using usernames to the likes of admin, ADMIN, ADMIN1, ADMINISTRATOR, and more. This shows enough based on the invoke web-request it was an opening for threat actors to attack our virtual machine through a calculator. Mainly because the firewalls on this machine is disabled. 
 
+---
+### 4. Containment and Eradication, Recovery - 
 
-
-### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
-
-Step 4 - Containment and Eradication, Recovery - 
 
 The containment strategey we are using is isolating the machine using Microsoft defender.  I gather all IP addresses, PCAP files, logs, hash values of suspected files (calc.au3.exe, etc.) and any indicators of compromise that will help build a legal case if needed.
+
+The compromised VM was isolated using Microsoft Defender to prevent further lateral movement or external communication. All relevant evidence—including IP addresses, PCAP files, logs, and file hashes (e.g., calc.au3.exe)—was collected to support remediation efforts and potential legal action. The next steps involve full eradication of malicious components and restoration of the system to a secure state.
+
+---
 
 
 ## **Summary Report: T1059 – Command and Scripting Interpreter Incident**
@@ -57,12 +59,5 @@ Timeline analysis in Microsoft Defender revealed a key event at **10:28:17**, wh
 Further investigation uncovered a PowerShell **Invoke‑WebRequest** command (Event ID 8408) used to download AutoIt‑v3‑setup.exe from a public URI. This download enabled the installation of AutoIt, which subsequently executed the malicious calc.au3 script, demonstrated by the calculator application launching on the VM.
 
 Additional threat‑hunting using DeepBlueCLI revealed **thousands of brute‑force attempts** beginning November 15th, targeting common administrative usernames such as *admin*, *ADMIN*, and *ADMINISTRATOR*. These attempts indicate that the disabled firewall and the malicious web‑request activity created an exploitable entry point for attackers.
-
-### **Containment and Recovery**
-The compromised VM was isolated using Microsoft Defender to prevent further lateral movement or external communication. All relevant evidence—including IP addresses, PCAP files, logs, and file hashes (e.g., calc.au3.exe)—was collected to support remediation efforts and potential legal action. The next steps involve full eradication of malicious components and restoration of the system to a secure state.
-
----
-
-
 
 ---
